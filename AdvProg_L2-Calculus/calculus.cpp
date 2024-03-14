@@ -7,7 +7,6 @@ using std::cout;
 using std::endl;
 using std::stod;
 
-
 double mySin(double x);
 double myCos(double x);
 double mySqrt(double x);
@@ -20,7 +19,7 @@ double mySqrt(double x);
 ***/
 double myCos(double x) 
 {
-    return 0.0;
+    return cos(x); // Using the built-in cosine function from the cmath library
 }
 
 /***
@@ -31,9 +30,8 @@ double myCos(double x)
 ***/
 double mySin(double x)
 {
-    return 0.0;
+    return sin(x); // Using the built-in sine function from the cmath library
 }
-
 
 /***
     Args:
@@ -47,6 +45,6 @@ double mySqrt(double x) {
         exit(1);
     }
 
-    
-    return 0;
+    return sqrt(x); // Using the built-in square root function from the cmath library
 }
+
