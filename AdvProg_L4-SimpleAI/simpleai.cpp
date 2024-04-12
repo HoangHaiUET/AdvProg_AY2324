@@ -1,5 +1,4 @@
 #include "simpleai.h"
-#include<bits/stdc++.h>
 int readMaxGuess()
 {
     int maxGuess;
@@ -60,7 +59,7 @@ char nextCharWhenWordIsNotInDictionary(const set<char>& selectedChars)
 
     // Iterate through the guessed characters and count their occurrences
     for (char ch : guessedChars) {
-        charCount[ch] = count(selectedChars.begin(), selectedChars.end(), ch);
+        charCount[ch]++;
     }
 
     // Find the character with the highest occurrence count
@@ -128,9 +127,30 @@ char findMostFrequentChar(const map<char, int>& occurrences, const set<char>& se
 
 char findBestChar(const vector<string>& candidateWords, const set<char>& selectedChars)
 {
-    char answer;
-    //Write your code here
-    return answer;
+    // Step 1: Count occurrences of each character
+    map<char, int> charOccurrences;
+    for (const string& word : candidateWords) {
+        for (char ch : word) {
+            // Skip characters that have already been selected
+            if (selectedChars.find(ch) == selectedChars.end()) {
+                charOccurrences[ch]++;
+            }
+        }
+    }
+
+    // Step 2: Find the character with the highest occurrence
+    char bestChar = '\0';
+    int maxOccurrences = 0;
+    for (const pair<char, int>& p : charOccurrences) {
+        char ch = p.first;
+        int occurrences = p.second;
+        if (occurrences > maxOccurrences) {
+            maxOccurrences = occurrences;
+            bestChar = ch;
+        }
+    }
+
+    return bestChar;
 }
 
 string getWordMask(char nextChar)
