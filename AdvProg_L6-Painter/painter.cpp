@@ -56,11 +56,9 @@ void Painter::turnLeft(double degree)
     angle -= degree;
 
     // Ensure the angle stays within the range of 0 to 360 degrees
-    while (angle < 0) {
-        angle += 360;
-    }
-    while (angle >= 360) {
-        angle -= 360;
+    angle = fmod(angle, 360.0);
+    if (angle < 0) {
+        angle += 360.0;
     }
 }
 
@@ -77,11 +75,9 @@ void Painter::turnRight(double degree)
     angle += degree;
 
     // Ensure the angle stays within the range of 0 to 360 degrees
-    while (angle < 0) {
-        angle += 360;
-    }
-    while (angle >= 360) {
-        angle -= 360;
+    angle = fmod(angle, 360.0);
+    if (angle < 0) {
+        angle += 360.0;
     }
 }
 
