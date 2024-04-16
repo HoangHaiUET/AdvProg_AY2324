@@ -50,10 +50,11 @@ void Painter::jumpBackward(int numPixel)
     Returns:
         None
 ***/
+
 void Painter::turnLeft(double degree)
 {
     // Rotate the painter left by the specified degree
-    angle -= degree;
+    angle += degree;
 
     // Ensure the angle stays within the range of 0 to 360 degrees
     angle = fmod(angle, 360.0);
@@ -72,7 +73,7 @@ void Painter::turnLeft(double degree)
 void Painter::turnRight(double degree)
 {
     // Rotate the painter left by the specified degree
-    angle += degree;
+    angle -= degree;
 
     // Ensure the angle stays within the range of 0 to 360 degrees
     angle = fmod(angle, 360.0);
