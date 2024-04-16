@@ -77,9 +77,6 @@ void Painter::turnRight(double degree)
 
     // Ensure the angle stays within the range of 0 to 360 degrees
     angle = fmod(angle, 360.0);
-    if (angle < 0) {
-        angle += 360.0;
-    }
 }
 
 /***
