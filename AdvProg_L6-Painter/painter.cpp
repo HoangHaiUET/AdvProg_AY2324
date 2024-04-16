@@ -54,6 +54,14 @@ void Painter::turnLeft(double degree)
 {
     // Rotate the painter left by the specified degree
     angle -= degree;
+    
+    // Ensure the angle stays within the range of 0 to 360 degrees
+    while (angle < 0) {
+        angle += 360;
+    }
+    while (angle >= 360) {
+        angle -= 360;
+    }
 }
 
 
@@ -63,10 +71,18 @@ void Painter::turnLeft(double degree)
     Returns:
         None
 ***/
-void Painter::turnRight(double degree)
+void Painter::turnLeft(double degree)
 {
-    // Rotate the painter right by the specified degree
+    // Rotate the painter left by the specified degree
     angle += degree;
+    
+    // Ensure the angle stays within the range of 0 to 360 degrees
+    while (angle < 0) {
+        angle += 360;
+    }
+    while (angle >= 360) {
+        angle -= 360;
+    }
 }
 
 /***
