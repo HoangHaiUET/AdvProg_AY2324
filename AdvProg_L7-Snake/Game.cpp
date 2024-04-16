@@ -19,6 +19,10 @@ Game::Game(int _width, int _height)
 
 Game::~Game()
 {
+
+}
+void Game::setGameStatus(GameStatus status) {
+    this->status = status;
 }
 
 void Game::snakeMoveTo(Position pos)
