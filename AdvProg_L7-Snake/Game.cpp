@@ -72,6 +72,11 @@ void Game::nextStep()
 
     snake.move(currentDirection);
 }
+void Snake::eatCherry()
+{
+    // Increment the cherry count
+    cherry++;
+}
 
 void Game::addCherry()
 {
